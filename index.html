@@ -3,50 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuantAI Store | Buy Bots</title>
+    <title>QuantAI Premium Store</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div class="bg-animation"></div>
+
     <div class="container">
         <header>
-            <h1 class="logo">💀 QUANT AI <span>STORE</span></h1>
-            <p>Direct License & Bot Purchase</p>
+            <div class="glitch-wrapper">
+                <h1 class="logo" data-text="QUANT AI STORE">QUANT AI <span>STORE</span></h1>
+            </div>
+            <p class="subtitle">Automated Trading Excellence</p>
         </header>
 
         <div class="grid">
-            <div class="card gold">
-                <div class="badge">BEST SELLER</div>
-                <h3>V15 SNIPER BOT</h3>
-                <p>Partial Close + Basket Trailing System.</p>
-                <div class="price">50 USDT</div>
-                <button class="btn" onclick="openPayment('V15 SNIPER BOT', '50 USDT')">Buy Now</button>
+            <div class="card sniper">
+                <div class="card-glow"></div>
+                <div class="badge">V15 ULTIMATE</div>
+                <h3>SNIPER AI SYSTEM</h3>
+                <p>Advanced RSI-EMA Logic & Basket Trailing.</p>
+                <div class="price">50<span>USDT</span></div>
+                <button class="btn-neon" onclick="openPayment('V15 SNIPER BOT', '50 USDT')">
+                    <span></span><span></span><span></span><span></span>
+                    SECURE ACCESS
+                </button>
             </div>
 
-            <div class="card">
-                <div class="badge">STABLE</div>
-                <h3>V14.02 QUANT AI</h3>
-                <p>Multi-Symbol Trading with Dashboard.</p>
-                <div class="price">30 USDT</div>
-                <button class="btn" onclick="openPayment('V14.02 QUANT AI', '30 USDT')">Buy Now</button>
+            <div class="card quant">
+                <div class="card-glow"></div>
+                <div class="badge">V14.02 PRO</div>
+                <h3>QUANT DASHBOARD</h3>
+                <p>Multi-Asset Management with Stealth License.</p>
+                <div class="price">30<span>USDT</span></div>
+                <button class="btn-neon" onclick="openPayment('V14.02 QUANT AI', '30 USDT')">
+                    <span></span><span></span><span></span><span></span>
+                    SECURE ACCESS
+                </button>
             </div>
         </div>
 
-        <div class="payment-section">
-            <h2>💳 SUPPORTED PAYMENTS</h2>
-            <div class="pay-grid">
-                <div class="pay-card"><strong>EasyPaisa:</strong> 03453202194</div>
-                <div class="pay-card"><strong>Bank:</strong> Habib bank limited  (11177900081003)</div>
-                <div class="pay-card"><strong>USDT (TRC20):</strong> TXXXXXXXXXXXXXXXXXXXX</div>
+        <div class="payment-box">
+            <h2 class="section-title">PAYMENT HUB</h2>
+            <div class="pay-methods">
+                <div class="method-card">
+                    <span class="label">EASYPAISA</span>
+                    <span class="value">03102580930</span>
+                </div>
+                <div class="method-card">
+                    <span class="label">USDT (TRC20)</span>
+                    <span class="value">TXXXXXXXXXXXXXXXXXXXX</span>
+                </div>
+                <div class="method-card">
+                    <span class="label">BANK TRANSFER</span>
+                    <span class="value">Askari Bank | 0123...</span>
+                </div>
             </div>
-            <p style="margin-top:20px;">After payment, send screenshot on WhatsApp for Bot File & License Key.</p>
-            <a href="https://wa.me/923102580930" class="wa-btn">Contact on WhatsApp: 03102580930</a>
+            
+            <a href="https://wa.me/923102580930" class="wa-float">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WA">
+                LIVE SUPPORT
+            </a>
         </div>
-
-        <footer>
-            <p>&copy; 2026 Godzilla Trader | All Rights Reserved</p>
-        </footer>
     </div>
 
     <script src="script.js"></script>
