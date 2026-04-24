@@ -1,0 +1,59 @@
+/* Payment Section ka background thoda behtar karne ke liye */
+.payment-section {
+    margin-top: 60px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.08); /* Thoda zyada visible background */
+    border-radius: 20px;
+    border: 2px solid #30363d;
+    text-align: center;
+}
+
+.payment-section h2 {
+    color: var(--neon-gold); /* Heading ko gold rang de diya */
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+/* Pay Cards ko bilkul clear dikhane ke liye */
+.pay-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.pay-card {
+    background: #1c2128;
+    color: #ffffff; /* Text color pure white */
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    border: 1px solid var(--neon-blue); /* Blue border se highlight hoga */
+    min-width: 250px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Taake section se alag dikhe */
+}
+
+.pay-card strong {
+    color: var(--neon-blue); /* Label (EasyPaisa etc) ko blue kar diya */
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+/* WhatsApp Button ko mazeed attractive banane ke liye */
+.wa-btn {
+    display: inline-block;
+    background: #25D366;
+    color: white !important; /* Force white text */
+    padding: 18px 35px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 35px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
