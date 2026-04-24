@@ -1,41 +1,138 @@
+:root {
+    --bg: #050505;
+    --neon-blue: #00f3ff;
+    --neon-purple: #bc13fe;
+    --neon-gold: #ffac00;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: var(--bg);
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+.bg-animation {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Logo Glitch Effect */
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px var(--neon-blue);
+}
+
+.logo span { color: var(--neon-blue); }
+
+/* Card Styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+    font-family: 'Orbitron';
+}
+
+.price span { font-size: 1rem; margin-left: 10px; color: var(--neon-blue); }
+
+/* Neon Button */
+.btn-neon {
+    position: relative;
+    padding: 15px 30px;
+    background: transparent;
+    color: var(--neon-blue);
+    border: none;
+    font-family: 'Orbitron';
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.btn-neon:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 50px var(--neon-blue);
+}
+
+/* Payment Hub */
+.payment-box {
+    margin-top: 80px;
+    background: rgba(255,255,255,0.02);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
 .method-card {
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #000;
     border-left: 4px solid var(--neon-blue);
     padding: 20px;
     margin: 10px;
     display: inline-block;
-    min-width: 300px;
+    min-width: 250px;
     text-align: left;
-    transition: 0.3s;
-    border-radius: 0 10px 10px 0;
 }
 
-.method-card:hover {
-    border-left: 4px solid var(--neon-gold);
-    background: rgba(255, 255, 255, 0.05);
-}
+.method-card .label { color: #888; font-size: 0.8rem; display: block; }
+.method-card .value { font-size: 1.2rem; font-weight: bold; color: #fff; }
 
-.method-card .label {
-    color: var(--neon-blue);
-    font-size: 0.75rem;
+/* WhatsApp Floating Button */
+.wa-float {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    margin-top: 30px;
     font-weight: bold;
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 5px;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
 }
 
-.method-card .value {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #fff;
-    display: block;
-    font-family: 'Orbitron';
-}
-
-.method-card .name {
-    color: #888;
-    font-size: 0.9rem;
-    display: block;
-    margin-top: 5px;
-}
+.wa-float img { width: 25px; }
