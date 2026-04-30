@@ -6,6 +6,25 @@
     <title>QuantAI Premium Store</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Card & Modal Core Styles */
+        .card { cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; background: #0a0a0a; border: 1px solid #222; border-radius: 15px; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 0 25px rgba(0, 242, 255, 0.4); border-color: #00f2ff; }
+        
+        .card-image { width: 100%; height: 220px; overflow: hidden; background: #000; border-bottom: 1px solid #333; }
+        .card-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+        .card:hover .card-image img { opacity: 1; transform: scale(1.05); }
+        
+        /* Modal Popup Styles */
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); }
+        .modal-content { background: #050505; margin: 3% auto; padding: 40px; border: 1px solid #00f2ff; width: 90%; max-width: 650px; border-radius: 20px; color: #fff; position: relative; box-shadow: 0 0 50px rgba(0, 242, 255, 0.2); animation: zoomIn 0.3s ease; }
+        @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        
+        .close-btn { position: absolute; right: 25px; top: 15px; font-size: 35px; color: #00f2ff; cursor: pointer; }
+        .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 25px; }
+        .setting-box { border: 1px solid #222; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.02); text-align: center; }
+        .recommendation { margin-top: 25px; color: #ff00ea; font-size: 1rem; border-left: 4px solid #ff00ea; padding: 12px; background: rgba(255, 0, 234, 0.03); }
+    </style>
 </head>
 <body>
 
@@ -16,37 +35,78 @@
             <div class="glitch-wrapper">
                 <h1 class="logo" data-text="QUANT AI STORE">QUANT AI <span>STORE</span></h1>
             </div>
-            <p class="subtitle">Automated Trading Excellence</p>
+            <p class="subtitle">Next-Gen Automated Trading Systems</p>
         </header>
 
         <div class="grid">
-            <div class="card sniper">
+            <!-- BOT 1: V15 SNIPER -->
+            <div class="card sniper" onclick="showDetails('sniper')">
                 <div class="card-glow"></div>
+                <div class="card-image">
+                    <!-- Integrated High-Quality Sniper Visual -->
+                    <img src="https://i.imgur.com/8Qp4eE6.jpg" alt="V15 Sniper AI">
+                </div>
                 <div class="badge">V15 ULTIMATE</div>
                 <h3>SNIPER AI SYSTEM</h3>
-                <p>Advanced RSI-EMA Logic & Basket Trailing.</p>
+                <p>RSI-EMA Precise Scalping Logic.</p>
                 <div class="price">500<span>USDT</span></div>
-                <button class="btn-neon" onclick="openPayment('V15 SNIPER BOT', '50 USDT')">
-                    <span></span><span></span><span></span><span></span>
-                    SECURE ACCESS
-                </button>
+                <button class="btn-neon">SYSTEM SPECS</button>
             </div>
 
-            <div class="card quant">
+            <!-- BOT 2: V14.02 QUANT -->
+            <div class="card quant" onclick="showDetails('quant')">
                 <div class="card-glow"></div>
+                <div class="card-image">
+                    <!-- Integrated High-Quality Quant Visual -->
+                    <img src="https://i.imgur.com/vHInoXo.jpg" alt="V14.02 Quant AI">
+                </div>
                 <div class="badge">V14.02 PRO</div>
                 <h3>QUANT DASHBOARD</h3>
-                <p>Multi-Asset Management with Stealth License.</p>
+                <p>ADX-ATR Trend Guard Strategy.</p>
                 <div class="price">300<span>USDT</span></div>
-                <button class="btn-neon" onclick="openPayment('V14.02 QUANT AI', '300 USDT')">
-                    <span></span><span></span><span></span><span></span>
-                    SECURE ACCESS
+                <button class="btn-neon">SYSTEM SPECS</button>
+            </div>
+        </div>
+
+        <!-- SPECS MODAL -->
+        <div id="detailsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2 id="m-title" style="color: #00f2ff; font-family: 'Orbitron';"></h2>
+                <p id="m-strategy" style="color: #888; font-size: 1rem; margin-bottom: 15px;"></p>
+                
+                <div class="details-grid">
+                    <div class="setting-box">
+                        <h4 style="color: #00ff00;">LOW RISK</h4>
+                        <p style="font-size: 0.8rem;">Lot: 0.01<br>DD: < 5%</p>
+                    </div>
+                    <div class="setting-box">
+                        <h4 style="color: #ffaa00;">MEDIUM</h4>
+                        <p style="font-size: 0.8rem;">Lot: 0.03<br>DD: 15%</p>
+                    </div>
+                    <div class="setting-box">
+                        <h4 style="color: #ff4444;">AGGRESSIVE</h4>
+                        <p style="font-size: 0.8rem;">Lot: 0.05+<br>High Return</p>
+                    </div>
+                </div>
+
+                <div class="recommendation">
+                    💡 <strong>Pro Tip:</strong> Use <strong>$250 Cent Account</strong> (25,000 USC) for 24/7 stable performance.
+                </div>
+                
+                <div style="margin-top:25px; border-top: 1px solid #222; padding-top: 15px;">
+                    <strong>Core Logic:</strong> <span id="m-logic" style="color: #ccc; font-size: 0.9rem;"></span>
+                </div>
+
+                <button class="btn-neon" onclick="closeModal(); document.getElementById('payment-box').scrollIntoView();" style="width: 100%; margin-top: 25px; height: 45px;">
+                    PROCEED TO PAYMENT
                 </button>
             </div>
         </div>
 
-        <div class="payment-box">
-            <h2 class="section-title">PAYMENT HUB</h2>
+        <!-- PAYMENT SECTION -->
+        <div id="payment-box" class="payment-box">
+            <h2 class="section-title">PAYMENT METHODS</h2>
             <div class="pay-methods">
                 <div class="method-card">
                     <span class="label">EASYPAISA</span>
@@ -56,19 +116,30 @@
                     <span class="label">USDT (TRC20)</span>
                     <span class="value">TKyeetwyyD1ExYVaPFKBt3MtvBchur2Ji1</span>
                 </div>
-                <div class="method-card">
-                    <span class="label">BANK TRANSFER</span>
-                    <span class="value">Habib bank limited  |11177900081003</span>
-                </div>
             </div>
-            
-            <a href="https://wa.me/923102580930" class="wa-float">
+            <a href="https://wa.me/923102580930" class="wa-float" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WA">
                 LIVE SUPPORT
             </a>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function showDetails(bot) {
+            const modal = document.getElementById('detailsModal');
+            if(bot === 'sniper') {
+                document.getElementById('m-title').innerText = "V15 SNIPER ULTIMATE";
+                document.getElementById('m-strategy').innerText = "RSI-EMA Precision Scalping";
+                document.getElementById('m-logic').innerText = "Focuses on trend exhaustion using RSI(7). Features dynamic basket trailing once $0.20 profit is achieved.";
+            } else {
+                document.getElementById('m-title').innerText = "V14.02 QUANT PRO";
+                document.getElementById('m-strategy').innerText = "ADX-ATR Hybrid Filtering";
+                document.getElementById('m-logic').innerText = "Filters sideways markets with ADX > 25. Uses ATR-based volatility stops to prevent spikes.";
+            }
+            modal.style.display = "block";
+        }
+        function closeModal() { document.getElementById('detailsModal').style.display = "none"; }
+        window.onclick = function(e) { if(e.target.className === 'modal') closeModal(); }
+    </script>
 </body>
 </html>
